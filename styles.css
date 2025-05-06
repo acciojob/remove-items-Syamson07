@@ -1,18 +1,8 @@
-/*  your css code here. If applicable */
-// Get references to the dropdown and button
-const colorSelect = document.getElementById('colorSelect');
-const removeColorBtn = document.getElementById('removeColorBtn');
+function removeColor() {
+  const select = document.getElementById("colorSelect");
+  const selectedIndex = select.selectedIndex;
 
-// Add event listener to the button
-removeColorBtn.addEventListener('click', () => {
-  // Get the selected color value
-  const selectedColor = colorSelect.value;
-
-  // Iterate through the options in the dropdown list and remove the selected option
-  for (let i = 0; i < colorSelect.options.length; i++) {
-    if (colorSelect.options[i].value === selectedColor) {
-      colorSelect.remove(i);
-      break; // Exit after removing the selected option
-    }
+  if (selectedIndex !== -1) {
+    select.remove(selectedIndex);
   }
-});
+}
